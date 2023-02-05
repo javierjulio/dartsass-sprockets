@@ -32,12 +32,12 @@ jobs:
         exclude:
           - os: windows-latest
             ruby-version: jruby
-          - ruby-version: '3.0'
-            railties-version: '6.1'
-          - ruby-version: '3.1'
-            railties-version: '6.1'
-          - ruby-version: '3.2'
-            railties-version: '6.1'
+          # - ruby-version: '3.0'
+          #   railties-version: '6.1'
+          # - ruby-version: '3.1'
+          #   railties-version: '6.1'
+          # - ruby-version: '3.2'
+          #   railties-version: '6.1'
     env:
       RAILTIES_VERSION: ${{ matrix.railties-version }}
     steps:
