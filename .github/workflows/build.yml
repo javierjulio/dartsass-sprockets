@@ -28,7 +28,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         ruby-version: ['2.7', '3.0', '3.1', 'jruby']
-        railties-version: ['6.1']
+        railties-version: ['6.1', '7.0']
         exclude:
           - os: windows-latest
             ruby-version: jruby
