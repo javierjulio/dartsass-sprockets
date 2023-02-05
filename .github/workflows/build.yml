@@ -53,30 +53,30 @@ jobs:
     - name: Test
       run: bundle exec rake test
 
-  test-vendor:
+  # test-vendor:
 
-    runs-on: ${{ matrix.os }}
+  #   runs-on: ${{ matrix.os }}
 
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        ruby-version: ['2.7', '3.0', '3.1', 'jruby']
-        submodule:
-          - vendor/github.com/sass/sassc-rails
-          - vendor/github.com/twbs/bootstrap
-        exclude:
-          - os: windows-latest
-            ruby-version: jruby
+  #   strategy:
+  #     matrix:
+  #       os: [macos-latest, ubuntu-latest, windows-latest]
+  #       ruby-version: ['2.7', '3.0', '3.1', 'jruby']
+  #       submodule:
+  #         - vendor/github.com/sass/sassc-rails
+  #         - vendor/github.com/twbs/bootstrap
+  #       exclude:
+  #         - os: windows-latest
+  #           ruby-version: jruby
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v3
 
-    - name: Setup ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
+  #   - name: Setup ruby
+  #     uses: ruby/setup-ruby@v1
+  #     with:
+  #       ruby-version: ${{ matrix.ruby-version }}
+  #       bundler-cache: true
 
     # - name: Test
     #   run: bundle exec rake git:submodule:test[${{matrix.submodule}}]
